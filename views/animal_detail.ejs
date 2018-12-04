@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Stuff about Animals</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/style.css" />
+
+</head>
+<body>
+    HELLO!S
+    <div class="container">
+        <% for (var x in data) { %>
+        <h1>Animal Detail Page</h1>
+        <h3>Name : <%= data[x].name%></h3>
+        <h4><span></span>- Created at : <%=  data[x].createdAt %></h4>
+        <h4><span></span>- Updated at : <%=  data[x].updatedAt %></h4>
+        <% } %>
+        <div class="button_row">
+            <form action="/" method="get">
+                <input type="submit" value="MAIN PAGE">
+            </form>
+        </div>
+    </div>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+</body>
+</html>

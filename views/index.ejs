@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Darwins Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+</head>
+
+<body>
+        <div id='title'>
+                <span><h1>Mongoose Dashboard</h1>
+               <h2>no mongeeses left behind</h2></span>    
+            </div> 
+ 
+    <div class="container">
+
+        
+        <% for (var x in data) { %>
+            <h3><%= Number(x)+1 %>. <%= data[x].name%></h3>
+            <form action="/dashboard/animal_detail/<%= data[x]._id %>" method="get">
+                <a href="/dashboard/animal_detail/<%= data[x]._id %>" class="button7" style="background-color:green">Animal Details</a>
+                <!-- <input type="submit" value="Detail"> -->
+            </form>
+            <form action="/dashboard/edit/<%= data[x]._id %>" method="get">
+                <a href="/dashboard/edit/<%= data[x]._id %>" class="button7" style="background-color:yellow">Edit Animal info</a>
+                <!-- <input type="submit" value="Edit"> -->
+            </form>
+            <form method="post">
+                <a href="/dashboard/destroy/<%= data[x]._id %>" class="button7" style="background-color:red">Delete Animal</a>
+                <!-- <input type="submit" value="Delete"> -->
+            </form>
+            <hr>
+        <% } %>
+        <div class="new_animal_button_row">
+            <form action="/dashboard/new" method="get">
+                <a href="/dashboard/new" class="button7" style="background-color:#2979FF">Add an Animal!</a>
+                <!-- <input type="submit" value="Add an Animal!"> -->
+            </form>
+        </div>
+    </div>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+</body>
+
+</html>

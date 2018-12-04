@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EDIT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/style.css" />
+
+</head>
+<body>
+    <div class="container">
+        <% for (var x in data) { %>
+        <h1>Edit animal name</h1>
+        <form action="/dashboard/<%= data[x]._id %>" method="post">
+            <div class="name_row">
+                <label for="name">Name : </label>
+                <input type="text" name="name" id="name" value="<%= data[x].name%>">
+            </div>
+            <div class="submit_row">
+             
+                <input type="submit" value="submit edit">
+            </div>
+        </form>
+        <% } %>
+    </div>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+</body>
+</html>
